@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Schuba Diving Simulation</title>
+        
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src='rotation.js'></script>
+    </head>
+
+    <body>
+        <a-scene>
+            <a-entity id='look' look-controls camera position='0 5 20'></a-entity>
+            
+            <a-assets timeout='1000'>
+                <a-asset-item 
+                    id='island' 
+                    src='./Models/low_poly_island/scene.gltf'
+                ></a-asset-item>
+
+                <a-asset-item 
+                    id='diver' 
+                    src='./Models/dive-suit/scene.gltf'
+                ></a-asset-item>
+            </a-assets>
+
+            <a-entity
+                id='islandModel'
+                gltf-model='#island'
+                position='0 0 0'
+                scale='8 4 3'
+                island-rotation
+            ></a-entity>
+
+            <a-entity
+                id='diverModel'
+                gltf-model='#diver'
+                position='5 -3 18'
+                scale='0.1 0.1 0.1'
+                rotation='0 90 -20'
+                diver-rotation
+            ></a-entity>
+      </a-scene>
+    </body>
+</html>
